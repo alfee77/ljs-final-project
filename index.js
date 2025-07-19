@@ -53,7 +53,7 @@ form.addEventListener("submit", (event) => {
       render();
       form.reset();
     } else {
-      console.log("Shit!!");
+      console.log("Shitty fuck!!");
       snackbar.show("Oh oh!");
     }
   });
