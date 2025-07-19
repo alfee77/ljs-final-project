@@ -48,6 +48,7 @@ form.addEventListener("submit", (event) => {
   logFoodAPI.post("/", foodToAdd).then((data) => {
     if (!data.error) {
       displayEntry(foodList, name.value, carbs.value, protein.value, fat.value);
+      console.log("Good");
       snackbar.show("Good good!");
       render();
       form.reset();
