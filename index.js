@@ -2,7 +2,6 @@ import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
 import AppData from "./app-data.js";
 import Chart from "chart.js/auto";
-import { snackbar } from "@material/snackbar";
 
 const logFoodAPI = new FetchWrapper(
   "https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/alfee77food"
@@ -49,12 +48,10 @@ form.addEventListener("submit", (event) => {
     if (!data.error) {
       displayEntry(foodList, name.value, carbs.value, protein.value, fat.value);
       console.log("Good");
-      snackbar.show("Good good!");
       render();
       form.reset();
     } else {
       console.log("Shitty fuck!!");
-      snackbar.show("Oh oh!");
     }
   });
 });
