@@ -1,6 +1,6 @@
 import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
-import snackbar from "snackbar";
+//import snackbar from "snackbar";
 import AppData from "./app-data.js";
 import Chart from "chart.js/auto";
 
@@ -49,10 +49,10 @@ form.addEventListener("submit", (event) => {
     if (!data.error) {
       displayEntry(foodList, name.value, carbs.value, protein.value, fat.value);
       render();
-      snackbar.show("Food added successfully.");
+      //snackbar.show("Food added successfully.");
       form.reset();
     } else {
-      snackbar.show("Some data is missing.");
+      //snackbar.show("Some data is missing.");
     }
   });
 });
