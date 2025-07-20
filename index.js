@@ -47,11 +47,11 @@ form.addEventListener("submit", (event) => {
   logFoodAPI.post("/", foodToAdd).then((data) => {
     if (!data.error) {
       displayEntry(foodList, name.value, carbs.value, protein.value, fat.value);
-      console.log("Good");
+      showSnackbar("Food added!");
       render();
       form.reset();
     } else {
-      console.log("Shitty fuck!!");
+      showSnackbar("Form incomplete!");
     }
   });
 });
@@ -113,5 +113,14 @@ const render = () => {
     appData.getTotalCalories();
   renderChart();
 };
+
+function showSnackbar(text) {
+  let x = document.getElementById("snackbar");
+  x.innerHTML = text;
+  x.className = "show";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
+}
 
 init();
