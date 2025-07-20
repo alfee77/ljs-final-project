@@ -57,7 +57,7 @@ form.addEventListener("submit", (event) => {
 });
 
 const init = () => {
-  logFoodAPI.get("/?pageSize=5").then((data) => {
+  logFoodAPI.get("/?pageSize=100").then((data) => {
     data.documents?.forEach((entry) => {
       const fields = entry.fields;
       displayEntry(
